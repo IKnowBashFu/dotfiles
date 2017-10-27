@@ -1,0 +1,39 @@
+if &compatible
+  set nocompatible
+endif
+
+set runtimepath+=~/.config/nvim
+
+call plug#begin(expand('~/.config/nvim/plugged'))
+
+Plug 'SirVer/ultisnips'
+Plug 'scrooloose/nerdtree'
+
+call plug#end()
+
+filetype plugin indent on
+syntax enable
+
+set t_Co=256
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set noexpandtab
+colorscheme hydrangea
+
+" No shitty undo
+nnoremap U :echo " < < ===== C H E C K C A P S L O C K ===== > > "<CR>
+
+
+" autocmd vimenter * NERDTree
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+set backspace=2
+" set mouse=
+
+
+" Set Up UltiSnips
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+

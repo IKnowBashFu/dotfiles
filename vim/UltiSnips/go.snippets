@@ -1,0 +1,17 @@
+snippet print "fmt.Println(...)"
+fmt.Println($0)
+endsnippet
+snippet f "func $name($args) {$code}"
+func $1($2) {
+  $3
+}
+endsnippet
+snippet ! "func $name($args) {$code}"
+package main
+
+import "fmt"
+
+func main() {
+  $1
+}
+endsnippet
