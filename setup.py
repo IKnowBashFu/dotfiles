@@ -7,7 +7,11 @@ parser = argparse.ArgumentParser(description='Install dotfiles')
 parser.add_argument('-e', '--editor', choices=['vim', 'nvim', 'both'], dest='editor', default=False)
 parser.add_argument('--powerline', '-p', nargs='?', const=True, default=False)
 parser.add_argument('--bashrc', '-b', nargs='?', const=True, default=False)
+parser.add_argument('--uninstall', nargs='?', const=True, default=False)
 args = parser.parse_args()
+
+if (args.uninstall == True):
+    os.system('unlink ~/.vim && unlink ~/.config/nvim && unlink ~/powerline-shell && unlink ~/.powerlinerc && unlink ~/.my-bashrc')
 
 if (args.editor == 'vim'):
     os.system('ln -s ~/dotfiles/vim ~/.vim')
