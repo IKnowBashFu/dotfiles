@@ -15,17 +15,17 @@ if (args.uninstall == True):
 
 if (args.editor == 'vim'):
     os.system('ln -s ~/dotfiles/vim ~/.vim')
-    os.system('VIM=vim ~/dotfiles/util-scripts/vimplug-installer.sh')
+    os.system('~/dotfiles/util-scripts/vimplug-installer.py -e vim')
 
 if (args.editor == 'nvim'):
     os.system('ln -s ~/dotfiles/nvim ~/.config/nvim')
-    os.system('VIM=nvim ~/dotfiles/util-scripts/vimplug-installer.sh')
+    os.system('~/dotfiles/util-scripts/vimplug-installer.py -e nvim')
 
 if (args.editor == 'both'):
     os.system('ln -s ~/dotfiles/vim ~/.vim')
-    os.system('VIM=vim ~/dotfiles/util-scripts/vimplug-installer.sh')
+    os.system('~/dotfiles/util-scripts/vimplug-installer.py -e vim')
     os.system('ln -s ~/dotfiles/nvim ~/.config/nvim')
-    os.system('VIM=nvim ~/dotfiles/util-scripts/vimplug-installer.sh')
+    os.system('~/dotfiles/util-scripts/vimplug-installer.sh -e nvim')
 
 if (args.powerline == True):
     os.system('ln -s ~/dotfiles/powerline-shell ~/powerline-shell')
